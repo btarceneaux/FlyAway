@@ -1,0 +1,28 @@
+@charset "UTF-8";
+
+body {
+  background-color: rgb(186, 219, 245);
+}
+
+h1 {
+  color: white;
+  margin-left: 20px;
+  font-weight: bold;
+}
+
+form{
+	text-align: left;
+	border: 3px;
+	color: navy;
+}
+
+table {
+  width: 75%;
+  border: 1px solid;
+  
+}
+
+input[type=text] {
+  border: 2px solid wh;
+  border-radius: 4px;
+}
