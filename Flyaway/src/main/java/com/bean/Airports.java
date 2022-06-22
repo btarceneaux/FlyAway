@@ -16,17 +16,16 @@ public class Airports {
 	private double longitude;
 	private int altitude;
 	private double timezone;
-	private double dst;
+	private String dst;
 	private String tz_database_time_zone;
 	private String type;
 	
 	public Airports() {
 		super();
 	}
-	
 
 	public Airports(int airport_id, String name, String city, String country, String iata, String icao, double latitude,
-			double longitude, int altitude, double timezone, double dst, String tz_database_time_zone, String type) {
+			double longitude, int altitude, double timezone, String dst, String tz_database_time_zone, String type) {
 		super();
 		this.airport_id = airport_id;
 		this.name = name;
@@ -42,7 +41,6 @@ public class Airports {
 		this.tz_database_time_zone = tz_database_time_zone;
 		this.type = type;
 	}
-
 
 	public int getAirport_id() {
 		return airport_id;
@@ -124,11 +122,11 @@ public class Airports {
 		this.timezone = timezone;
 	}
 
-	public double getDst() {
+	public String getDst() {
 		return dst;
 	}
 
-	public void setDst(double dst) {
+	public void setDst(String dst) {
 		this.dst = dst;
 	}
 
@@ -147,4 +145,5 @@ public class Airports {
 	public void setType(String type) {
 		this.type = type;
 	}
+	
 }
