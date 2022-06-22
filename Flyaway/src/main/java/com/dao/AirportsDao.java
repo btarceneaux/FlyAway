@@ -13,15 +13,13 @@ public class AirportsDao
 	{
 		SessionFactory sf = DbSessionFactory.getSessionFactoryReference();
 		Session session = sf.openSession();
+	
+//		System.out.println(queryString);
+		//System.out.println("The city being passed in is : " );
+		Query<Airports> q = session.createQuery("from Airports where city = :nameOfCity");
+		q.setParameter("nameOfCity", cityName);
 		
-		String queryString = "SELECT * FROM Airports " +
-		                     "WHERE city = '" + cityName + "'";
-		
-		System.out.println(queryString);
-		
-		@SuppressWarnings("unchecked")
-		Query<Airports> qry = session.createSQLQuery(queryString); 
-		List<Airports> airportList = qry.list();
+		List<Airports> airportList = q.list();
 		
 		return airportList;
 	}
