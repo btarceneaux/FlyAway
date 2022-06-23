@@ -8,11 +8,11 @@ public class AirportsService
 {
 	AirportsDao ad = new AirportsDao();
 	
-	public List<Airports> getAirportDetails(String parameterCity)
+	public List<Airports> getAirportDetails(String sourceCity, String destinationCity)
 	{
-		List<Airports> airportList = ad.getAirportDetails(parameterCity);
+		List<Airports> airportRoutesList = ad.getRouteDetails(sourceCity, destinationCity);
 		
-		return airportList;
+		return airportRoutesList;
 	}
 
 }

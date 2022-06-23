@@ -18,19 +18,19 @@
     <th>Airport Code</th>
   </tr>
 <%
-  Object obj = session.getAttribute("airportListing");
-  ArrayList<Airports> arrayList = (ArrayList<Airports>)obj; 
+Object obj = session.getAttribute("flightListing");
+  List<Airports> airportRoutesList = (List<Airports>)obj; 
   
-  if(arrayList.size() > 0)
+  if(airportRoutesList.size() > 0)
   {
 	  //List<Airports> airportList = (List<Airports>)obj;
-	  out.println("The size of the list is : " + arrayList.size());
+	  System.out.println("The size of the list is : " + airportRoutesList.size());
 	  
-	  Iterator<Airports> airportIterator = arrayList.listIterator();
+	  Iterator<Airports> airportIterator = airportRoutesList.iterator();
 	  while(airportIterator.hasNext())
 	  {
 		  Airports a = airportIterator.next();
-		  %>
+%>
 		  <tr>
 		    <td><%=a.getCity() %></td>
 		    <td><%=a.getName() %></td>

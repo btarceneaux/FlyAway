@@ -1,45 +1,40 @@
 package com.bean;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
 
-@Entity
 public class Airports {
-	@Id
 	private int airport_id;
 	private String name;
 	private String city;
 	private String country;
 	private String iata;
-	private String icao;
-	private double latitude;
-	private double longitude;
-	private int altitude;
-	private double timezone;
-	private String dst;
-	private String tz_database_time_zone;
-	private String type;
+	private String source_airport;
+	private int source_airport_id;
+	private String destination_airport;
+	private int destination_airport_id;
+	private int airline_id;
+	private String airline_name;
+	private String alias;
 	
 	public Airports() {
 		super();
 	}
 
-	public Airports(int airport_id, String name, String city, String country, String iata, String icao, double latitude,
-			double longitude, int altitude, double timezone, String dst, String tz_database_time_zone, String type) {
+	public Airports(int airport_id, String name, String city, String country, String iata, String source_airport,
+			int source_airport_id, String destination_airport, int destination_airport_id, int airline_id,
+			String airline_name, String alias) {
 		super();
 		this.airport_id = airport_id;
 		this.name = name;
 		this.city = city;
 		this.country = country;
 		this.iata = iata;
-		this.icao = icao;
-		this.latitude = latitude;
-		this.longitude = longitude;
-		this.altitude = altitude;
-		this.timezone = timezone;
-		this.dst = dst;
-		this.tz_database_time_zone = tz_database_time_zone;
-		this.type = type;
+		this.source_airport = source_airport;
+		this.source_airport_id = source_airport_id;
+		this.destination_airport = destination_airport;
+		this.destination_airport_id = destination_airport_id;
+		this.airline_id = airline_id;
+		this.airline_name = airline_name;
+		this.alias = alias;
 	}
 
 	public int getAirport_id() {
@@ -82,68 +77,59 @@ public class Airports {
 		this.iata = iata;
 	}
 
-	public String getIcao() {
-		return icao;
+	public String getSource_airport() {
+		return source_airport;
 	}
 
-	public void setIcao(String icao) {
-		this.icao = icao;
+	public void setSource_airport(String source_airport) {
+		this.source_airport = source_airport;
 	}
 
-	public double getLatitude() {
-		return latitude;
+	public int getSource_airport_id() {
+		return source_airport_id;
 	}
 
-	public void setLatitude(double latitude) {
-		this.latitude = latitude;
+	public void setSource_airport_id(int source_airport_id) {
+		this.source_airport_id = source_airport_id;
 	}
 
-	public double getLongitude() {
-		return longitude;
+	public String getDestination_airport() {
+		return destination_airport;
 	}
 
-	public void setLongitude(double longitude) {
-		this.longitude = longitude;
+	public void setDestination_airport(String destination_airport) {
+		this.destination_airport = destination_airport;
 	}
 
-	public int getAltitude() {
-		return altitude;
+	public int getDestination_airport_id() {
+		return destination_airport_id;
 	}
 
-	public void setAltitude(int altitude) {
-		this.altitude = altitude;
+	public void setDestination_airport_id(int destination_airport_id) {
+		this.destination_airport_id = destination_airport_id;
 	}
 
-	public double getTimezone() {
-		return timezone;
+	public int getAirline_id() {
+		return airline_id;
 	}
 
-	public void setTimezone(double timezone) {
-		this.timezone = timezone;
+	public void setAirline_id(int airline_id) {
+		this.airline_id = airline_id;
 	}
 
-	public String getDst() {
-		return dst;
+	public String getAirline_name() {
+		return airline_name;
 	}
 
-	public void setDst(String dst) {
-		this.dst = dst;
+	public void setAirline_name(String airline_name) {
+		this.airline_name = airline_name;
 	}
 
-	public String getTz_database_time_zone() {
-		return tz_database_time_zone;
+	public String getAlias() {
+		return alias;
 	}
 
-	public void setTz_database_time_zone(String tz_database_time_zone) {
-		this.tz_database_time_zone = tz_database_time_zone;
+	public void setAlias(String alias) {
+		this.alias = alias;
 	}
-
-	public String getType() {
-		return type;
-	}
-
-	public void setType(String type) {
-		this.type = type;
-	}
-	
 }
