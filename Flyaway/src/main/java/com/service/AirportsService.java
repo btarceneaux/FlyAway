@@ -8,9 +8,9 @@ public class AirportsService
 {
 	AirportsDao ad = new AirportsDao();
 	
-	public List<Airports> getAirportDetails(String sourceCity, String destinationCity)
+	public List<Airports> getAirportDetails(String sourceCity, String destinationCity, int numberOfPassengers)
 	{
-		List<Airports> airportRoutesList = ad.getRouteDetails(sourceCity, destinationCity);
+		List<Airports> airportRoutesList = ad.getRouteDetails(sourceCity, destinationCity, numberOfPassengers);
 		
 		return airportRoutesList;
 	}

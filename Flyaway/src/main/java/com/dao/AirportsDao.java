@@ -11,7 +11,7 @@ import com.resource.DbResource;
 
 public class AirportsDao 
 {
-	public List<Airports> getRouteDetails(String sourceCity, String destinationCity)
+	public List<Airports> getRouteDetails(String sourceCity, String destinationCity, int numberOfPassengers)
 	{
 		String query = 
 				
@@ -25,16 +25,22 @@ public class AirportsDao
 		+ " b.source_airport_id, "
 		+ " b.destination_airport, "
 		+ " b.destination_airport_id, "
+		+ " e.name AS 'destination_airport_name',"
 		+ " c.airline_id, "
 		+ " c.airline_name, "
-		+ " c.alias "
+		+ " c.alias, "
+		+ " f.price"
 		+ " FROM Airports a "
 		+ " INNER JOIN Routes b "
 		+ " ON b.source_airport_id = a.airport_id"
 		+ " AND b.destination_airport_id IN (SELECT d.airport_id FROM Airports d WHERE d.city = ?)"
 		+ " INNER JOIN Airlines c"
 		+ " ON c.airline_id = b.airline_id"
-		+ " WHERE city = ?";
+		+ " INNER JOIN Airports e"
+		+ " ON e.iata = b.destination_airport"
+		+ " LEFT JOIN Prices f "
+		+ " ON f.iata_code = a.iata"
+		+ " WHERE a.city = ?";
 		
 		List<Airports> lap = new ArrayList<Airports>();
 		
@@ -46,6 +52,7 @@ public class AirportsDao
 			pstmt.setString(2, sourceCity);
 			
 			ResultSet rs = pstmt.executeQuery();
+			int count = 0;
 			
 			while(rs.next())
 			{
@@ -60,9 +67,24 @@ public class AirportsDao
 				tempAirport.setSource_airport_id(rs.getInt("source_airport_id"));
 				tempAirport.setDestination_airport(rs.getNString("destination_airport"));
 				tempAirport.setDestination_airport_id(rs.getInt("destination_airport_id"));
+				tempAirport.setDestination_airport_name(rs.getString("destination_airport_name"));
 				tempAirport.setAirline_id(rs.getInt("airline_id"));
 				tempAirport.setAirline_name(rs.getString("airline_name"));
 				tempAirport.setAlias(rs.getString("alias"));
+				tempAirport.setSelected(false);
+				double tempPrice = rs.getDouble("price");
+				tempAirport.setIndex(count);
+				if(tempPrice > 0.0)
+				{
+					tempAirport.setPrice((tempPrice * numberOfPassengers));
+				}
+				else
+				{
+					//Default to 750
+					tempPrice = 750.0;
+					tempAirport.setPrice((tempPrice * numberOfPassengers));
+				}
+				count++;
 				
 				lap.add(tempAirport);
 			}

@@ -10,18 +10,23 @@ public class Airports {
 	private String source_airport;
 	private int source_airport_id;
 	private String destination_airport;
+	private String destination_airport_name;
 	private int destination_airport_id;
 	private int airline_id;
 	private String airline_name;
 	private String alias;
+	private double price;
+	private boolean isSelected;
+	private int index;
 	
 	public Airports() {
 		super();
 	}
 
 	public Airports(int airport_id, String name, String city, String country, String iata, String source_airport,
-			int source_airport_id, String destination_airport, int destination_airport_id, int airline_id,
-			String airline_name, String alias) {
+			int source_airport_id, String destination_airport, String destination_airport_name,
+			int destination_airport_id, int airline_id, String airline_name, String alias, double price, boolean isSelected,
+			int index) {
 		super();
 		this.airport_id = airport_id;
 		this.name = name;
@@ -31,10 +36,14 @@ public class Airports {
 		this.source_airport = source_airport;
 		this.source_airport_id = source_airport_id;
 		this.destination_airport = destination_airport;
+		this.destination_airport_name = destination_airport_name;
 		this.destination_airport_id = destination_airport_id;
 		this.airline_id = airline_id;
 		this.airline_name = airline_name;
 		this.alias = alias;
+		this.price = price;
+		this.isSelected = false;
+		this.index = index;
 	}
 
 	public int getAirport_id() {
@@ -101,6 +110,14 @@ public class Airports {
 		this.destination_airport = destination_airport;
 	}
 
+	public String getDestination_airport_name() {
+		return destination_airport_name;
+	}
+
+	public void setDestination_airport_name(String destination_airport_name) {
+		this.destination_airport_name = destination_airport_name;
+	}
+
 	public int getDestination_airport_id() {
 		return destination_airport_id;
 	}
@@ -132,4 +149,29 @@ public class Airports {
 	public void setAlias(String alias) {
 		this.alias = alias;
 	}
+
+	public double getPrice() {
+		return price;
+	}
+
+	public void setPrice(double price) {
+		this.price = price;
+	}
+
+	public boolean isSelected() {
+		return isSelected;
+	}
+
+	public void setSelected(boolean isSelected) {
+		this.isSelected = isSelected;
+	}
+
+	public int getIndex() {
+		return index;
+	}
+
+	public void setIndex(int index) {
+		this.index = index;
+	}
+
 }

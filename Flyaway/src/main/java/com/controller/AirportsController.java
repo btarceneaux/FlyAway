@@ -42,9 +42,12 @@ public class AirportsController extends HttpServlet {
 		// Get the parameters from the form
 		String sourceCity = request.getParameter("depart");
 		String destinationCity = request.getParameter("arrive");
+		String numberOfPassengers = request.getParameter("travelers");
+		
+		int tempNumberOfPassengers = Integer.parseInt(numberOfPassengers);
 		
 		// Get the data from the Airports table so we can use it in searching the routes table. 
-		List<Airports> routeDetails = apService.getAirportDetails(sourceCity, destinationCity);
+		List<Airports> routeDetails = apService.getAirportDetails(sourceCity, destinationCity, tempNumberOfPassengers);
 		
 		hs.setAttribute("flightListing", routeDetails);
 		

@@ -7,15 +7,22 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" href="flyAway.css">
 <meta charset="UTF-8">
 <title>Available Flights</title>
 </head>
 <body>
 <table border="1">
   <tr>
+    <th>Purchase</th>
+    <th>Country</th>
     <th>Source City</th>
-    <th>Airport Name</th>
-    <th>Airport Code</th>
+    <th>Source</th>
+    <th>Source Airport Name</th>
+    <th>Destination</th>
+    <th>Destination Airport Name</th>
+    <th>Airline</th>
+    <th>Price</th>
   </tr>
 <%
 Object obj = session.getAttribute("flightListing");
@@ -32,9 +39,15 @@ Object obj = session.getAttribute("flightListing");
 		  Airports a = airportIterator.next();
 %>
 		  <tr>
+		    <td><input type="radio" name=<%=a.getIndex() %>></td>
+		    <td><%=a.getCountry() %></td>
 		    <td><%=a.getCity() %></td>
-		    <td><%=a.getName() %></td>
 		    <td><%=a.getIata() %></td>
+		    <td><%=a.getName() %></td>
+		    <td><%=a.getDestination_airport() %></td>
+		    <td><%=a.getDestination_airport_name() %></td>
+		    <td><%=a.getAirline_name() %></td>
+		    <td><%=a.getPrice() %></td>
 		  </tr>
 		  <% 
 		  
