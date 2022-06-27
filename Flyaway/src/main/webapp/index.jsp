@@ -6,10 +6,10 @@
 <h1 align=center>FlyAway</h1>
 <h4>Book Your Flight Today</h4>
 <form action="AirportController" method="get">
-  <label>Departure Airport</label>
-  <input type="text" name="depart">
-  <label>Arrival Airport</label>
-  <input type="text" name="arrive">
+  <label>Departure City</label>
+  <input type="text" name="depart" required>
+  <label>Arrival City</label>
+  <input type="text" name="arrive" required>
   <label for="departureDate">Departure date:</label>
   <input type="date" id="departureDate" name="trip-start"
        value="2022-06-15"

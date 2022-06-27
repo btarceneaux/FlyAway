@@ -17,4 +17,8 @@
     <servlet-name>AirportsController</servlet-name>
     <url-pattern>/AirportController</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>LoginController</servlet-name>
+    <url-pattern>/LoginController</url-pattern>
+  </servlet>
 </web-app>

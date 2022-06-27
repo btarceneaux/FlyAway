@@ -1,32 +1,36 @@
-<%@page import="java.util.ArrayList"%>
-<%@page import="java.util.Iterator"%>
-<%@page import="java.util.List"%>
-<%@page import="com.bean.Airports"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@page import="com.bean.Airports"%>
 <!DOCTYPE html>
 <html>
 <head>
 <link rel="stylesheet" href="flyAway.css">
 <meta charset="UTF-8">
-<title>Available Flights</title>
+<title>Insert title here</title>
 </head>
 <body>
+<br/>
+Here are the details of your flight.
+
 <table border="1">
-  <tr>
-    <th>Select Flight</th>
-    <th>Country</th>
-    <th>Source City</th>
-    <th>Source</th>
-    <th>Source Airport Name</th>
-    <th>Destination</th>
-    <th>Destination Airport Name</th>
-    <th>Airline</th>
-    <th>Price</th>
-  </tr>
+<tr>
+  <th>Select Flight</th>
+  <th>Country</th>
+  <th>Source City</th>
+  <th>Source</th>
+  <th>Source Airport Name</th>
+  <th>Destination</th>
+  <th>Destination Airport Name</th>
+  <th>Airline</th>
+  <th>Price</th>
+</tr>
+</table>
 <%
-  Object obj = session.getAttribute("flightListing");
-  List<Airports> airportRoutesList = (List<Airports>)obj; 
+  Object obj = session.getAttribute("reservation");
+  Airports airportReservation = (Airports)obj;
+
+  /* String departureDate = session.getAttribute("departureDate");
+  Airports myAirportReservation =  session.getAttribute("reservation"); 
   
   if(airportRoutesList.size() > 0)
   {
@@ -36,9 +40,9 @@
 	  Iterator<Airports> airportIterator = airportRoutesList.iterator();
 	  while(airportIterator.hasNext())
 	  {
-		  Airports a = airportIterator.next();
+		  Airports a = airportIterator.next(); */
 %>
-       <form action="register.jsp" method="post" name="myForm">
+<%--        <form action="register.jsp" method="post" name="myForm">
 		  <tr>
 		    <td><input type="radio" name="option" value=<%=a.getIndex() %> required></td>
 		    <td><%=a.getCountry() %></td>
@@ -49,15 +53,13 @@
 		    <td><%=a.getDestination_airport_name() %></td>
 		    <td><%=a.getAirline_name() %></td>
 		    <td><%=a.getPrice() %></td>
-		  </tr>
-		  <% 
+		  </tr> --%>
+<%-- 		  <% 
 		  
 	  }
 	  
   }
-%>
-</table>
-  <input type="submit" name="Purchase" value="Purchase">
-  </form>
+%> --%>
+
 </body>
 </html>
