@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" href="flyAway.css">
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
@@ -17,7 +18,7 @@
         </tr>
         <tr>
           <td>Password</td>
-          <td><input type="text" name="password" required></td>
+          <td><input type="password" name="password" required></td>
         </tr>
         <tr>
           <td>Admin <input type="radio" name="typeOfUser" value="admin" required></td>

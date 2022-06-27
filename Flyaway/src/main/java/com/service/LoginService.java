@@ -30,7 +30,7 @@ public class LoginService {
 	{
 		int result = 0;
 		
-		if(ld.checkLoginInformation(emailAddress, password) && typeOfUser.equals("admin"))
+		if(emailAddress.contentEquals("admin@gmail.com") && ld.checkLoginInformation(emailAddress, password) && typeOfUser.equals("admin"))
 		{
 			result = 7;
 		}

@@ -1,20 +1,19 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
 <%@page import="com.bean.Airports"%>
+<%@page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <link rel="stylesheet" href="flyAway.css">
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Home Page</title>
 </head>
 <body>
-<br/>
+
 Here are the details of your flight.
 
 <table border="1">
 <tr>
-  <th>Select Flight</th>
   <th>Country</th>
   <th>Source City</th>
   <th>Source</th>
@@ -29,37 +28,20 @@ Here are the details of your flight.
   Object obj = session.getAttribute("reservation");
   Airports airportReservation = (Airports)obj;
 
-  /* String departureDate = session.getAttribute("departureDate");
-  Airports myAirportReservation =  session.getAttribute("reservation"); 
-  
-  if(airportRoutesList.size() > 0)
-  {
-	  //List<Airports> airportList = (List<Airports>)obj;
-	  System.out.println("The size of the list is : " + airportRoutesList.size());
-	  
-	  Iterator<Airports> airportIterator = airportRoutesList.iterator();
-	  while(airportIterator.hasNext())
-	  {
-		  Airports a = airportIterator.next(); */
-%>
-<%--        <form action="register.jsp" method="post" name="myForm">
-		  <tr>
-		    <td><input type="radio" name="option" value=<%=a.getIndex() %> required></td>
-		    <td><%=a.getCountry() %></td>
-		    <td><%=a.getCity() %></td>
-		    <td><%=a.getIata() %></td>
-		    <td><%=a.getName() %></td>
-		    <td><%=a.getDestination_airport() %></td>
-		    <td><%=a.getDestination_airport_name() %></td>
-		    <td><%=a.getAirline_name() %></td>
-		    <td><%=a.getPrice() %></td>
-		  </tr> --%>
-<%-- 		  <% 
-		  
-	  }
-	  
-  }
-%> --%>
+   //String departureDate = session.getAttribute("departureDate");
 
+%>
+   <form action="register.jsp" method="post" name="myForm">
+     <tr>
+	   <td><%=airportReservation.getCountry() %></td>
+	   <td><%=airportReservation.getCity() %></td>
+	   <td><%=airportReservation.getIata() %></td>
+	   <td><%=airportReservation.getName() %></td>
+	   <td><%=airportReservation.getDestination_airport() %></td>
+	   <td><%=airportReservation.getDestination_airport_name() %></td>
+	   <td><%=airportReservation.getAirline_name() %></td>
+	   <td><%=airportReservation.getPrice() %></td>
+	 </tr>
+   </form>
 </body>
 </html>

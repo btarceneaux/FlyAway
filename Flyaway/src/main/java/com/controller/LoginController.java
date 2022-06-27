@@ -62,7 +62,7 @@ public class LoginController extends HttpServlet {
 		else if (result == 1)
 		{
 			pw.println("Welcome to the user home page");
-		    rdAdmin.include(request, response);
+		    rdUser.include(request, response);
 		}
 		else
 		{
