@@ -9,39 +9,51 @@
 <title>Home Page</title>
 </head>
 <body>
-
-Here are the details of your flight.
-
-<table border="1">
-<tr>
-  <th>Country</th>
-  <th>Source City</th>
-  <th>Source</th>
-  <th>Source Airport Name</th>
-  <th>Destination</th>
-  <th>Destination Airport Name</th>
-  <th>Airline</th>
-  <th>Price</th>
-</tr>
-</table>
+<br/>
+<h3> Flight Details</h3>
+<br>
 <%
   Object obj = session.getAttribute("reservation");
   Airports airportReservation = (Airports)obj;
 
    //String departureDate = session.getAttribute("departureDate");
-
 %>
+<table border="1">
    <form action="register.jsp" method="post" name="myForm">
      <tr>
+       <td>Country</td>
 	   <td><%=airportReservation.getCountry() %></td>
+	 </tr>
+	 <tr>
+	   <td>Source City</td>
 	   <td><%=airportReservation.getCity() %></td>
+	 </tr>
+	 <tr>
+	   <td>Source Airport Alias</td>
 	   <td><%=airportReservation.getIata() %></td>
+	 </tr>
+	 <tr>
+	   <td>Source Airport Name</td>
 	   <td><%=airportReservation.getName() %></td>
+	 </tr>
+	 <tr>
+	   <td>Destination Airport Alias</td>
 	   <td><%=airportReservation.getDestination_airport() %></td>
+	 </tr>
+	 <tr>
+	   <td>Destination Airport Name</td>
 	   <td><%=airportReservation.getDestination_airport_name() %></td>
+	 </tr>
+	 <tr>
+	   <td>Airline</td>
 	   <td><%=airportReservation.getAirline_name() %></td>
+	 </tr>
+	 <tr>
+	   <td>Price</td>
 	   <td><%=airportReservation.getPrice() %></td>
 	 </tr>
    </form>
+   
+ </table>
 </body>
 </html>

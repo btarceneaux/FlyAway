@@ -4,9 +4,16 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet" href="flyAway.css">
 <title>Insert title here</title>
 </head>
 <body>
-You Are Now In The Admin Page
+<br/>
+<h3> Admin Page</h3>
+<br>
+<a href="changePassword.jsp">Change Password</a><br/>
+<a href="SourceAndDestinationController">List All Places</a><br/>
+<a href="AirlinesController">List All Airlines</a><br/>
+<a href="listFlights.jsp">List Flights</a><br/>
 </body>
 </html>

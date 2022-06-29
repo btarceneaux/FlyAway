@@ -47,6 +47,13 @@ public class LoginController extends HttpServlet {
 		String password = request.getParameter("password");
 		String typeOfUser = request.getParameter("typeOfUser");
 		
+		Object obj = hs.getAttribute("flightListing");
+		List<Airports> airportRoutesList = (List<Airports>)obj; 
+		int index = Integer.parseInt((String)hs.getAttribute("option"));
+
+		
+		//Now let's get the item that was selected
+		Airports myReservation = airportRoutesList.get(index);
 		
 		int result = ls.checkLoginInformation(email, password, typeOfUser);
 		
@@ -61,6 +68,9 @@ public class LoginController extends HttpServlet {
 		}
 		else if (result == 1)
 		{
+			// Make selections available on next page
+			hs.setAttribute("reservation", myReservation);
+			
 			pw.println("Welcome to the user home page");
 		    rdUser.include(request, response);
 		}
