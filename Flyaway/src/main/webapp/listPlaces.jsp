@@ -36,5 +36,8 @@
 	  }
   }
   %>
+<br/>
+<br/>
+<jsp:include page= "NavigationFooter.jsp"/>
 </body>
 </html>

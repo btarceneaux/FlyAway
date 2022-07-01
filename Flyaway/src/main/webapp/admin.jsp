@@ -15,10 +15,8 @@
 <a href="SourceAndDestinationController">List All Places</a><br/>
 <a href="AirlinesController">List All Airlines</a><br/>
 <a href="FlightsController">List All Flights</a><br/>
+<br/>
+<br/>
+<jsp:include page= "NavigationFooter.jsp"/>
 </body>
-<br/>
-<br/>
-<footer align="center">
-  <a href="NavigationFooter.jsp">Return To Index Page</a></p>
-</footer>
 </html>

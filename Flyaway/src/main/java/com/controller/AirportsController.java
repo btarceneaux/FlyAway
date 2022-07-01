@@ -3,6 +3,9 @@ package com.controller;
 import jakarta.servlet.http.HttpServlet;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import com.bean.Airports;
@@ -43,8 +46,8 @@ public class AirportsController extends HttpServlet {
 		String sourceCity = request.getParameter("depart");
 		String destinationCity = request.getParameter("arrive");
 		String numberOfPassengers = request.getParameter("travelers");
-		String departureDate = request.getParameter("departureDate");
-		String returnDate = request.getParameter("returnDate");
+		String departureDate = request.getParameter("tripStart");
+		String returnDate = request.getParameter("tripEnd");
 		
 		int tempNumberOfPassengers = Integer.parseInt(numberOfPassengers);
 		

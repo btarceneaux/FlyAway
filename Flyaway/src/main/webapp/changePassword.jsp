@@ -29,5 +29,8 @@
     <input type="submit" value="submit"><br/> 
     <input type="reset" value="reset"><br/>
   </form>
+<br/>
+<br/>
+<jsp:include page= "NavigationFooter.jsp"/>
 </body>
 </html>

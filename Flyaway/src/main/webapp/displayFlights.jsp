@@ -59,5 +59,8 @@
 </table>
   <input type="submit" name="Purchase" value="Purchase">
   </form>
+<br/>
+<br/>
+<jsp:include page= "NavigationFooter.jsp"/>
 </body>
 </html>

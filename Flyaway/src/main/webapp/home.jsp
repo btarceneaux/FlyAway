@@ -19,7 +19,6 @@
    //String departureDate = session.getAttribute("departureDate");
 %>
 <table border="1">
-   <form action="register.jsp" method="post" name="myForm">
      <tr>
        <td>Country</td>
 	   <td><%=airportReservation.getCountry() %></td>
@@ -52,8 +51,51 @@
 	   <td>Price</td>
 	   <td><%=airportReservation.getPrice() %></td>
 	 </tr>
-   </form>
-   
+	 <tr>
+	   <td>Departure Date</td>
+	   <td><%=session.getAttribute("departureDate").toString() %></td>
+	 </tr>
+	 <tr>
+	   <td>Return Date</td>
+	   <td><%=session.getAttribute("returnDate").toString() %></td>
+	 </tr>
  </table>
+ 
+ <br/>
+ 
+ <form action="ReservationController" method="post">
+   <table>
+     <h3>Payment</h3>
+     <tr>
+       <td>Name : </td>
+     </tr>
+     <tr>
+       <td><input type="text" name="creditCardName" required></td>
+     </tr>
+     <tr>
+       <td>Credit Card Number : </td>
+     </tr>
+     <tr>
+       <td><input type="number" name="creditCardNumber" required></td>
+     </tr>
+     <tr>
+       <td>Expiration Date : </td>
+     </tr>
+     <tr>
+       <td><input type="date" name="expirationDate" required></td>
+     </tr>
+     <tr>
+       <td>CVV Code : </td>
+     </tr>
+     <tr>
+       <td><input type="number" name="creditCardNumber" required></td>
+     </tr>
+   </table>
+   <input type="submit" value="submit"><br/> 
+   <input type="reset" value="reset"><br/>
+ </form>
+<br/>
+<br/>
+<jsp:include page= "NavigationFooter.jsp"/>
 </body>
 </html>

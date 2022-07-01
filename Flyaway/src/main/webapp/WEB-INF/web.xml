@@ -15,7 +15,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>AirportsController</servlet-name>
-    <url-pattern>/AirportController</url-pattern>
+    <url-pattern>/AirportsController</url-pattern>
   </servlet-mapping>
 
 </web-app>

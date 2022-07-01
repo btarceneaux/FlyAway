@@ -59,5 +59,8 @@
   Already have an account? <br/>
   <a href="Login.jsp">Login Here</a>
   <%session.setAttribute("option",request.getParameter("option")); %>
+  <br/>
+  <br/>
+  <jsp:include page= "NavigationFooter.jsp"/>
 </body>
 </html>

@@ -50,6 +50,8 @@ public class LoginController extends HttpServlet {
 		Object obj = hs.getAttribute("flightListing");
 		List<Airports> airportRoutesList = (List<Airports>)obj; 
 		int index = Integer.parseInt((String)hs.getAttribute("option"));
+		
+		hs.setAttribute("emailAddress", email);
 
 		
 		//Now let's get the item that was selected
@@ -129,7 +131,7 @@ public class LoginController extends HttpServlet {
 			{
 				// Make selections available on next page
 				hs.setAttribute("reservation", myReservation);
-				
+				hs.setAttribute("emailAddress", emailAddress);
 				pw.println("Account created.");
 				rd1.include(request, response);
 			}
